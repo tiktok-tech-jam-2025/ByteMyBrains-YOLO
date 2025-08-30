@@ -2,3 +2,10 @@ document-detection-v2.v3-document-detection-nano-.yolov12
 Face ID.v6i.yolov12
 license.v5i.yolov12
 screen.v1i.yolov12
+combined
+datasets
+output_base
+output_combined
+output_openimage
+runs
+test
