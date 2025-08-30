@@ -49,7 +49,7 @@ pip install ultralytics fiftyone pycocotools
 Other common packages:
 
 ```bash
-pip install torch torchvision opencv-python
+pip install torch torchvision torchaudio
 ```
 
 ### 3. Dataset Preparation
@@ -85,12 +85,53 @@ Inside the notebook:
 * Trains on your sensitive data detection dataset
 * Logs training runs in `runs/detect/`
 
+For this application, the dataset used for fine-tuning the model is the Open Images V7 dataset, choosing the classes     "Human face",
+"Mobile phone",
+"Laptop",
+"Computer keyboard",
+"Computer monitor",
+"Book",
+"Envelope",
+"Camera",
+"Tablet computer",
+"Briefcase". These are additional classes added to the original list of classes of the base YOLOv12n checkpoint model.
+
 ---
 
-## 📊 Evaluation
+# 📊 YOLOv12n Evaluation Results
 
 ![alt text](<assets/confusion_matrix .png>)
 ![alt text](<assets/results.png>)
+
+**Environment**  
+Ultralytics 8.3.189 🚀
+Python-3.12.11
+torch-2.8.0+cu128
+CUDA:0 (Tesla T4, 15095MiB)
+
+**Model Summary**  
+YOLOv12n summary (fused):
+159 layers, 2,558,678 parameters, 0 gradients, 6.3 GFLOPs
+
+---
+
+## 📈 Validation Metrics
+
+| Class               | Images | Instances | Precision | Recall | mAP@50 | mAP@50-95 |
+|---------------------|--------|-----------|-----------|--------|--------|-----------|
+| **all**             | 641    | 1627      | 0.553     | 0.542  | 0.541  | 0.422     |
+| Human face          | 192    | 343       | 0.470     | 0.338  | 0.355  | 0.229     |
+| Mobile phone        | 105    | 147       | 0.748     | 0.668  | 0.734  | 0.638     |
+| Laptop              | 52     | 70        | 0.706     | 0.414  | 0.511  | 0.382     |
+| Computer keyboard   | 63     | 67        | 0.542     | 0.582  | 0.582  | 0.406     |
+| Computer monitor    | 73     | 100       | 0.724     | 0.340  | 0.524  | 0.372     |
+| Book                | 95     | 720       | 0.417     | 0.272  | 0.235  | 0.136     |
+| Envelope            | 7      | 7         | 0.533     | 0.714  | 0.721  | 0.638     |
+| Camera              | 142    | 153       | 0.765     | 0.618  | 0.682  | 0.476     |
+| Tablet computer     | 11     | 13        | 0.220     | 0.615  | 0.297  | 0.280     |
+| Briefcase           | 5      | 7         | 0.405     | 0.857  | 0.769  | 0.666     |
+
+---
 
 
 ## 🛡️ Applications
