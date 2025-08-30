@@ -23,8 +23,7 @@ The goal is to provide a practical pipeline for detecting and masking sensitive 
 ├── yolo12n_finetuned.zip # Final checkpoint as CoreML
 ├── yolo_test.py          # Script for checking YOLO performance
 ├── yolo_finetune.ipynb   # Main notebook for fine-tuning YOLO
-├── README.md             # Project documentation
-└── yolo12n.pt
+└── README.md             # Project documentation
 
 ````
 
